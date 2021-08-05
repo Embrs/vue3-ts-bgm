@@ -1,0 +1,10 @@
+:80 {
+    encode zstd gzip
+    log {
+        format json
+        level error
+    }
+
+    root * /usr/share/caddy
+    file_server
+}

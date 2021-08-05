@@ -1,0 +1,1 @@
+/* eslint-disable */  export default ({'locale':'zh-TW','test':'測試','lang':'中文','account':'帳號','password':'密碼','login':'登入','page':{'Member':'會員',},})

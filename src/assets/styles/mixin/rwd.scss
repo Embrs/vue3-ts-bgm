@@ -1,0 +1,87 @@
+
+$pc-max-width: 1366px; // 頁面最大寬度邊界
+
+$web-media:1025px;
+$pad-media:1024px;
+
+$pads-media:767px;
+$phone-media:768px;
+
+//電腦
+@mixin web-media() {
+  @media all and (min-width: $web-media) {
+    @content;
+  }
+}
+//平板
+@mixin pad-media() {
+  @media all and (min-width: $pads-media) and (max-width:$pad-media) {
+      @content;
+  }
+}
+//手機
+@mixin phone-media() {
+  @media all and (max-width: $phone-media) {
+    @content;
+  }
+}
+
+@mixin min($min) {
+  @media all and (min-width: $min + 'px') {
+    @content;
+  }
+}
+@mixin max($max) {
+  @media all and (max-width: $max + 'px') {
+    @content;
+  }
+}
+@mixin min-max($min, $max) {
+  @media all and (min-width: $min + 'px') and (max-width: $max + 'px') {
+    @content;
+  }
+}
+
+// 頁面邊界間格控制
+@mixin page-width-limit {
+  width: 100%;
+  max-width: calc(#{$pc-max-width} + 90px);
+  margin: 0 auto;
+  @include web-media {
+    padding: 0 45px;
+  }
+  @include pad-media {
+    padding: 0 30px;
+  }
+  @include phone-media {
+    padding: 0 20px;
+  }
+}
+
+// 顯示控制
+@mixin media-show {
+  @include web-media {
+    .pad-media {
+      display: none;
+    }
+    .phone-media {
+      display: none;
+    }
+  }
+  @include pad-media {
+    .web-media {
+      display: none;
+    }
+    .phone-media {
+      display: none;
+    }
+  }
+  @include phone-media {
+    .web-media {
+      display: none;
+    }
+    .pad-media {
+      display: none;
+    }
+  }
+}

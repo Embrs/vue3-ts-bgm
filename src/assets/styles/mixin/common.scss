@@ -1,0 +1,71 @@
+  @mixin size($width: 100%, $height: $width) {
+    width: $width;
+    height: $height;
+  }
+
+  @mixin pfixed($zindex: 99999) {
+    z-index: $zindex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  @mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+  }
+  
+  @mixin flex($row: center, $column: center,) {
+    display: flex;
+    align-items: $row ;
+    justify-content: $column;
+  }
+  @mixin column($justify: center, $align: center) {
+    display: flex;
+    flex-direction: column;
+    justify-content: $justify;
+    align-items: $align;
+  }
+  @mixin line {
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(234, 241, 248);
+  }
+  
+  @mixin top-line {
+    box-sizing: border-box;
+    border-top: 1px solid rgb(224, 234, 244);
+  }
+  
+  @mixin text-line {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  @mixin text-break {
+    // word-break: break-all; // 強制換行
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  @mixin border-shadow {
+    box-sizing: border-box;
+    box-shadow: 0px 0px 1px 1px rgb(185, 185, 185);
+  }
+
+  @mixin select-none {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+  }
+
+  @mixin btn-click {
+    cursor: pointer;
+    user-select: none; 
+    &:active {
+      transform: scale(0.98);
+    }
+  }

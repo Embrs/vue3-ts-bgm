@@ -1,0 +1,11 @@
+{
+  "locale":   ["zh-TW", "en-US"],
+  "test":     ["測試",   "Test~"],
+  "lang":     ["中文",   "English"],
+  "account":  ["帳號",   "Account"],
+  "password": ["密碼",   "Password"],
+  "login":    ["登入",   "Login"],
+  "page":  {
+    "Member": ["會員", "Member"]
+  }
+}
